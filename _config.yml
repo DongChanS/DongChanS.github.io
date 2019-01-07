@@ -1,0 +1,45 @@
+# Site settings
+title: DC's blog
+description: '수학과를 갓 졸업한 SSAFY 교육생의 블로그입니다'
+url: 'https://start6666.github.io'
+baseurl:
+# google_analytics: 'UA-XXXXXX-X'
+# disqus_shortname: 'your-disqus-name'
+#disqus_url = 'https://disqus.com/by/disqus_O3EaAPGTi7'
+disqus_shortname: 'https-start6666-github-io'
+
+author:
+  name: 'Shin Dong Chan'
+  email: start6663@gmail.com
+  twitter_username: 
+  facebook_username: 
+  github_username:  start6666
+  linkedin_username:  
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+sass:
+    sass_dir: _sass
+    style: compressed
+
+kramdown:
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
