@@ -10,7 +10,7 @@
     <div class="panel-main__content">
         <a href="{{ site.baseurl }}/" title="link to home of {{ site.title }}">
           <img src="{{ site.baseurl }}/images/profile.jpg" class="user-image" alt="My Profile Photo">
-          <h1 class="panel-cover__title panel-title">{{ site.title }}</h1>
+          <h1 class="panel-cover__title panel-title" style="background:None; border:None;">{{ site.title }}</h1>
         </a>
         <hr class="panel-cover__divider">
         <p class="panel-cover__description">{{ site.description }}</p>
@@ -23,7 +23,7 @@
               <li class="navigation__item">
                 <a>
                 <form action="{{ site.baseurl }}/#blog">
-                  <input type="submit" value="Blog" class="blog-button" style="width:100%;"> 
+                  <input type="submit" value="Go to Blog Home" class="blog-button" style="width:100%;"> 
                 </form>
                 </a>
               </li>
@@ -84,12 +84,18 @@
             {% endif %}
 
             <!-- RSS -->
-            <li class="navigation__item">
+<!--             <li class="navigation__item">
               <a href="{{ site.baseurl }}/feed.xml" title="Subscribe" target="_blank">
                 <i class="icon icon-rss"></i>
                 <span class="label">RSS</span>
               </a>
-            </li>
+            </li> -->
+              
+               <li class="navigation__item">
+                <a href="{{ site.baseurl }}/tags" title="Categories" target="_blank">
+                  Categories
+                </a>
+               </li>
 
             </ul>
           </nav>
