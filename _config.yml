@@ -3,7 +3,7 @@ title: DongChanS's blog
 description: '수학과 학생의 개발일지'
 url: 'https://dongchans.github.io'
 baseurl:
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: UA-133672893-1
 # disqus_shortname: 'your-disqus-name'
 #disqus_url = 'https://disqus.com/by/disqus_O3EaAPGTi7'
 disqus_shortname: 'https-start6666-github-io'
