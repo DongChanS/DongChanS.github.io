@@ -21,10 +21,16 @@
           <nav class="cover-navigation cover-navigation--primary">
             <ul class="navigation">
               <li class="navigation__item">
-                <a>
+                <a title="Home">
                 <form action="{{ site.baseurl }}/#blog">
-                  <input type="submit" value="Go to Blog Home" class="blog-button" style="width:100%;"> 
+                  Blog Home<input type="submit" class="blog-button" style="width:100%;"> 
                 </form>
+                </a>
+              </li>
+              
+              <li class="navigation__item">
+                <a href="{{ site.baseurl }}/tags" title="Categories" target="_blank">
+                  <div style="font-size:1.7em;"> Categories </div>
                 </a>
               </li>
             </ul>
@@ -84,18 +90,14 @@
             {% endif %}
 
             <!-- RSS -->
-<!--             <li class="navigation__item">
+            <li class="navigation__item">
               <a href="{{ site.baseurl }}/feed.xml" title="Subscribe" target="_blank">
                 <i class="icon icon-rss"></i>
                 <span class="label">RSS</span>
               </a>
-            </li> -->
+            </li>
               
-             <li class="navigation__item">
-              <a href="{{ site.baseurl }}/tags" title="Categories" target="_blank">
-                <div style="font-size:1.7em;"> Categories </div>
-              </a>
-             </li>
+             
 
             </ul>
           </nav>
