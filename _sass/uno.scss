@@ -1584,9 +1584,6 @@ input[type="tel"] {
 		margin: 0 10px;
 		font-size: .9em; }
 
-// 	.navigation--social {
-// 		margin-top: 5px;
-// 		margin-left: 0; } 
 	}
 @media all and (max-width: 1700px) {
 	.btn-mobile-menu {
@@ -1611,6 +1608,10 @@ input[type="tel"] {
 
 	.panel-cover__divider--secondary {
 		display: none; }
+	
+	.navigation--social {
+		margin-top: 5px;
+		margin-left: 0; } 
 
 	.panel-cover {
 		width: 100%;
