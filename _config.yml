@@ -1,7 +1,7 @@
 # Site settings
-title: DC's blog
+title: 블로그에 오신 것을 환영합니다!
 description: '수학과를 갓 졸업한 SSAFY 교육생의 블로그입니다'
-url: 'https://start6666.github.io'
+url: 'https://dongchans.github.io'
 baseurl:
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
@@ -13,7 +13,7 @@ author:
   email: start6663@gmail.com
   twitter_username: 
   facebook_username: 
-  github_username:  start6666
+  github_username:  DongChanS
   linkedin_username:  
 
 defaults:
