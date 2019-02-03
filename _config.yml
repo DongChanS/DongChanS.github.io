@@ -1,6 +1,6 @@
 # Site settings
-title: 블로그에 오신 것을 환영합니다!
-description: '수학과를 갓 졸업한 SSAFY 교육생의 블로그입니다'
+title: DongChanS's blog
+description: '수학과 학생의 개발일지'
 url: 'https://dongchans.github.io'
 baseurl:
 # google_analytics: 'UA-XXXXXX-X'
