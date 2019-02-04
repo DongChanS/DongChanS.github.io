@@ -1439,7 +1439,12 @@ nav {
 	color : #fff;
 }
 
+// 배경 조정
 
+.collapse:not(.show) {
+	display: none;
+	height:42px;
+}
 
 
 .pagination {
