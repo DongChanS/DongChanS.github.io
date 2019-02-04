@@ -1437,11 +1437,12 @@ nav {
 
 .nav-item > a > div, i{
 	color : #fff;
-
+}
 
 // 배경 조정
 
 .collapse:not(.show) {
+	display:block !important;
 	visibility: hidden !important;
 	height:16px !important;
 }
