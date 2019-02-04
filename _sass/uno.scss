@@ -1401,11 +1401,44 @@ nav {
 // 	margin-left: 1.5em; }
 // 	.navigation--social a {
 // 		padding: 6px 8px 6px 9px; }
-		.navigation--social a .label {
-			display: none; }
-		.navigation--social a .icon {
-			display: block;
-			font-size: 1.7em; }
+		// .navigation--social a .label {
+		// 	display: none; }
+		// .navigation--social a .icon {
+		// 	display: block;
+		// 	font-size: 1.7em; }
+
+.nav-item a .label {
+	display : none;
+}
+.nav-item a .icon {
+	display: block;
+	font-size: 1.7em;
+
+// 정렬하기
+
+.nav-item > a {
+	display:flex;
+	justify-content: center;
+}
+
+.nav-item {
+	border: 1px solid rgba(256,256,256,1);
+	border-radius: 10px;
+	height: 30px;
+}
+
+// 글씨 조정
+
+.navbar-nav {
+	font-weight: 700;
+}
+
+.nav-item > a > div, i{
+	color : #fff;
+}
+
+
+
 
 .pagination {
 	display: block;

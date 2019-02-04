@@ -1,12 +1,12 @@
-<!-- <span class="mobile btn-mobile-menu">
-  <i class="icon icon-list btn-mobile-menu__icon"></i>
-  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
-</span> -->
 <div class="fixed-top">
     <nav class="navbar navbar-dark bg-dark" style="justify-content: center;">
         <!-- <a class="navbar-brand" href="#">Never expand</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <span class="mobile btn-mobile-menu">
+              <i class="icon icon-list btn-mobile-menu__icon"></i>
+              <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+          </span>
         </button>
       
         <div class="collapse navbar-collapse" id="navbarsExample01">
@@ -18,38 +18,38 @@
               </li>
           </ul>
           
-          <ul class="navbar-expand navbar-nav mr-auto">
-            <li class="nav-item col-4">
+          <ul class="navbar-expand-md navbar-nav mr-auto">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="{{ site.baseurl }}/categories" title="Categories" target="_blank">
                   <div style="font-size:1.5em;"> Categories </div>
                 </a>
             </li>
-            <li class="nav-item col-4">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="{{ site.baseurl }}/tags" title="tags" target="_blank">
                   <div style="font-size:1.5em;"> Tags </div>
                 </a>
             </li>
-            <li class="nav-item col-4">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="{{ site.baseurl }}/about" title="about" target="_blank">
                   <div style="font-size:1.5em;"> About Me </div>
                 </a>
             </li>
           </ul>
 
-          <ul class="navbar-expand navbar-nav mr-auto">
-            <li class="nav-item col-4">
+          <ul class="navbar-expand-md navbar-nav mr-auto">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="https://www.github.com/{{ site.author.github_username }}" title="{{ site.author.github_username }} on GitHub" target="_blank">
                   <i class="icon icon-social-github"></i>
                   <span class="label">GitHub</span>
                 </a>
             </li>
-            <li class="nav-item col-4">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="mailto:{{ site.author.email }}" title="Email {{ site.author.email }}" target="_blank">
                     <i class="icon icon-mail"></i>
                     <span class="label">Email</span>
                 </a>
             </li>
-            <li class="nav-item col-4">
+            <li class="nav-item col-4-lg col-12-md">
                 <a href="{{ site.baseurl }}/feed.xml" title="Subscribe" target="_blank">
                   <i class="icon icon-rss"></i>
                   <span class="label">RSS</span>
