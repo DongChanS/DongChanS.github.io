@@ -1442,7 +1442,7 @@ nav {
 // 배경 조정
 
 .collapse:not(.show) {
-	display: none;
+	visibility: hidden;
 	height:42px;
 }
 
