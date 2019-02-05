@@ -955,7 +955,6 @@ h5 {
 	margin-top: .8em;
 	margin-bottom: .4em;
 	color: #333333;
-	border: 1px inset rgba(203,232,225,0.2);
 	font-weight: 700;
 	background-color: #cbe8e1;
 	border-radius: 10px;
@@ -966,13 +965,16 @@ h1 {
 	margin-top: 0;
 	font-size: 3.2em;
 	line-height: 1.2em;
-	letter-spacing: .05em; }
+	letter-spacing: .05em;
+	border: 1px inset rgba(153,211,223,0.2);}
 
 h2 {
-	font-size: 2.2em; }
+	font-size: 2.2em;
+	border: 1px inset rgba(153,211,223,0.2);}
 
 h3 {
-	font-size: 1.8em; }
+	font-size: 1.8em;
+	border: 1px inset rgba(203,232,225,0.2);}
 
 h4 {
 	font-size: 1.4em; }
@@ -985,7 +987,12 @@ h5 {
 
 p {
 	margin-bottom: 1.3em;
-	line-height: 1.7em; }
+	line-height: 1.7em;}
+
+.post > p {
+	padding : 0 20px;
+}
+
 
 strong {
 	font-weight: bold; }
@@ -1043,7 +1050,15 @@ pre {
 	pre code {
 		padding: 0;
 		background: none;
-		border: none; }
+		border: none; 		
+		line-height: 1.4;
+		padding: 1rem;
+		font-size: 1.2rem;
+		}
+
+
+
+
 
 .date,
 .time,
@@ -1109,7 +1124,9 @@ pre {
 
 .content-wrapper__inner {
 	margin: 0 10%;
-	padding: 50px 0; }
+	padding: 50px 0; 
+	max-width : 850px;
+}
 
 .footer {
 	display: block;
@@ -1614,7 +1631,8 @@ input[type="tel"] {
 
 @media all and (min-width: 1300px) {
 	.content-wrapper {
-		margin-left: 530px; } }
+		margin-left: 530px; }
+}
 @media all and (max-width: 1100px) {
 	.panel-cover__logo {
 		width: 70px; }
