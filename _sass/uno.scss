@@ -937,10 +937,10 @@ body {
 	background: #fae3df; }
 
 a {
-	text-decoration: none;
+	text-decoration : none !important;
 	color: #e25440; }
 	a:hover {
-		color: #b9301c;
+		color: #b9301c !important;
 		-o-transition: .5s;
 		-ms-transition: .5s;
 		-moz-transition: .5s;
