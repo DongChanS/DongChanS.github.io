@@ -1,0 +1,190 @@
+---
+layout : post
+title : OS 3
+author : Shin Dong Chan
+category : ['Operating System']
+---
+## Introduce to OS (3)
+
+위 포스트는 udacity의 [Introduce to Operating Systems by Geogia Tech](https://www.udacity.com/course/introduction-to-operating-systems--ud923) 를 참고하였습니다.
+
+추가로 [이 곳](https://medium.com/pocs/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%BB%A4%EB%84%90-%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C-%EA%B0%95%EC%9D%98%EB%85%B8%ED%8A%B8-1-d36d6c961566) 을 참고하였습니다.
+
+
+
+### 1. OS Services
+
+운영체제의 구성(서비스)들의 예시를 들어보도록 하겠습니다.
+
+운영체제의 각 기능들은 하드웨어의 component들과 연결되어 있습니다.
+
+ex)
+
+1. 스케쥴러 -> cpu를 컨트롤하기 위해서 필요한 것.
+
+2. memory manager -> physical memory에 여러 어플리케이션을 저장하기 위함.
+
+   여러 어플리케이션은 overwrited되지 않음.
+
+3. block device driver -> 블록 디바이스(디스크)를 작동하기 위한 장치
+
+결론적으로 OS는
+
+위에서 설명한 서비스들과, 어플리케이션을 실행하는 장치, 어플리케이션 개발자를 위한 기능들로 구성되어 있습니다.
+
+그렇기 때문에 운영체제마다 세부적인 Component들은 다를 수 있지만,
+
+추상화시켜야하는 기능들은 전부 가지고 있으며, 윈도우와 리눅스의 System call type들도 이름만 다르지 형식들은 비슷합니다.
+
+### 2. OS의 종류들
+
+이제부터는 운영체제의 종류(구성되는 방식)들에 대해서 간단히 알아보도록 하겠습니다.
+
+#### 2-1. Monolithic OS
+
+Monolithic OS는 모든 서비스들을 담고 있습니다.
+
+그 서비스들이라 함은...
+
+* 모든 하드웨어
+
+* 어플리케이션을 실행하기 위한 모든 장치들
+
+* 모든 파일 시스템
+
+  EX) Sequencial access에 최적화된 파일 시스템
+
+  Randomize access에 최적화된 파일 시스템
+
+대표적으로 리눅스가 Monolithic OS의 예인데요,
+
+어플리케이션을 제외한 모든 시스템들을 커널이 직접 관리하기 때문에 다른 파일시스템에 접근하는 것이나, 프로세스에게 메세지를 전달하는 행위들을 전부 System call을 통해서 할 수 있습니다.
+
+장점
+
+1. 모든 필요한 것들이 있음.
+
+2. 따라서 컴파일하는데 시간이 오래 걸리지 않음.
+
+   ([운영 체제](https://ko.wikipedia.org/wiki/%EC%9A%B4%EC%98%81_%EC%B2%B4%EC%A0%9C)의 기능의 거의 모든 것이 단일 [메모리](https://ko.wikipedia.org/wiki/%EB%A9%94%EB%AA%A8%EB%A6%AC) 공간에서 행해지고, 동일한 프로세스를 처리할 때 사용되는 [문맥 교환](https://ko.wikipedia.org/wiki/%EB%AC%B8%EB%A7%A5_%EA%B5%90%ED%99%98)이나 [프로세스 간 통신](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4_%EA%B0%84_%ED%86%B5%EC%8B%A0) 등에 의한 과부하는 상대적으로 적어서, 실질적인 성능 면에서 유리하다는 주장이 있다. 출처 : [위키피디아](https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9D_%EC%BB%A4%EB%84%90))
+
+단점
+
+1. 너무 많은 것들이 있기 때문에 유지보수가 힘듬.
+2. 사이즈가 크기 때문에 그만큼 메모리가 많이 필요함. -> 성능저하 우려
+
+#### 2-2. Modular OS
+
+Modular OS는 이름과 같이 모듈을 통해서 동작되는 운영체제입니다.
+
+기본적으로 OS라면 있어야 할 구성요소와 필요한 시스템 기능들을 모듈을 통해 추가(import)할 수 있습니다.
+
+즉, 필요에 의해서 커스터마이징이 가능하다는 장점이 있습니다.
+
+
+
+위에서 말한 모듈이라 하면 두 가지 종류가 있는데,
+
+1. Interface : OS의 부분으로 작동하기 위해서 임포트된 모듈들
+
+2. workload : 작업 환경에 따라 동적으로 유저 단계에서 임포트하는 모듈들 
+
+   EX)
+
+   데이터베이스 -> 파일시스템을 최적화해서 랜덤하게 접근
+
+   다른 파일시스템 -> 시퀀셜하게 가능
+
+
+
+장점
+
+1. 유지보수가 쉬움 : 모듈단위로 되어있기 때문에 부분적으로 유지보수를 해도 되어서 편합니다.
+2. 작은 코드 베이스, less resource intensive
+
+단점
+
+1. level of interaction이 필요하다
+
+   : 그냥 모듈을 임포트하기 위해서 약간의 접근이 필요하다는 뜻인 것 같습니다.
+
+   크게 비용에 영향을 미치는 요소는 아니라고 하네요 
+
+2. 완전히 이질적인 환경에서 구성된 모듈을 불러올 시에 버그가 발생할 수 있음.
+
+
+
+#### 2-3. [MicroKernel](https://selfish-developer.com/entry/%EB%AA%A8%EB%86%80%EB%A6%AC%EC%8B%9DMonolithic-kernel%EA%B3%BC-%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9CMicro-%EC%BB%A4%EB%84%90)
+
+OS를 작동하기 위해 가장 필수적인 구성들만 있음
+
+* Address space : 어플리케이션을 실행하기 위한 주소들
+
+* Thread : 프로세스보다도 작은 실행 흐름의 최소 단위라는데.. 무슨말인지는 잘 모르겠습니다.
+
+  (하나의 프로그램이 동시에 작업을 하기 위해서 만든 실행단위개념이라고 합니다.)
+
+
+
+그 외에 다른 어플리케이션(데이터베이스)나, 기존에서 배웠던 OS에 있어야만 할 것 같은 구성요소들(파일시스템, Device driver)들도 유저모드에서 가지고 있습니다.
+
+그렇기 때문에 이런 유저모드에 있는 다양한 기능들을 통제하기 위해서 많은 inter-process interaction이 필요하다고 합니다.
+
+(inter-process interaction : 프로세스간의 상호작용)
+
+
+
+장점
+
+1. 매우 작음 -> 과부하가 거의 일어나지 않음.
+2. 코드를 검증하기가 매우 쉬움(왜..?)
+
+단점
+
+1. portability is sort of questionable
+
+   - 왜냐하면 밑바탕이 되는 하드웨어에 너무 최적화된 구조이기 때문.
+
+   - 다른 곳에 이식하기가 어렵다.
+
+   - The fact that there may be more one-off versions of a microkernel specialized for dirfferent platforms makes it maybe harder to find common components of software
+
+     -> software complexity
+
+2. 다른 유저레벨 어플리케이션, 프로세스과의 교류를 많이 요구함
+
+
+
+### 리눅스와 맥 os 구조
+
+그림으로 너무 잘 설명되어있어서 그림을 첨부합니다.
+
+#### Linux OS
+
+리눅스는 Monolithic OS로써, 각 기능들이 계층적으로 이루어져 있습니다.
+
+![1](C:\Users\Owner\Desktop\1.PNG)
+
+* STL : 시스템 콜을 실행하기 위한 라이브러리
+
+* 유틸리티 프로그램 : 개발자로 하여금 OS와 소통하기 쉽게 만드는 프로그램들
+
+Linux Kernel
+
+![2](C:\Users\Owner\Desktop\2.png)
+
+커널은 여러 기능들이 독립적으로 구성되어 있습니다.
+
+#### MAC OS
+
+![3](C:\Users\Owner\Desktop\3.png)
+
+Mach : 마이크로커널
+
+- 메모리 관리
+- 쓰레드
+- 인터프로세스 커뮤니케이션
+
+BSD : BSD 커맨드라인을 통한 UNIX interpretability를 제공함. 
+
+드라이버, 커널모듈 : 동적으로 임포트되어서 작동할 수 있음.
