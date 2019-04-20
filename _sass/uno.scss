@@ -1060,7 +1060,10 @@ div {
 	padding : 20px;
 }
 
-
+post > table {
+	position : relative;
+	left : 20px;
+}
 
 .date,
 .time,
