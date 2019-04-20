@@ -1056,11 +1056,11 @@ pre {
 		font-size: 1rem !important;
 		}
 
-div {
+.post > div {
 	padding : 20px;
 }
 
-post > table {
+.post > table {
 	position : relative;
 	left : 20px;
 }
